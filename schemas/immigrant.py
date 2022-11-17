@@ -17,13 +17,25 @@ class ImmigrantCreate(ImmigrantBase):
     date_of_birth: datetime
     card_number: str
 
-    # TODO validate the country of an immigrant
-    def _is_from_country(self):
-        pass
+    def __init__(self, **data):
+        # generates card number for every instance
+        name = data["surnames"]
+        uniq = (
+            hash(
+                data["date_of_birth"].day
+                + (
+                    len(data["surnames"])
+                    * len(data["surnames"])
+                    / data["date_of_birth"].year
+                    + data["date_of_birth"].month
+                )
+            )
+            % 30_000_000
+        )
 
-    # TODO validate the card_number of an immigrant
-    def _card_validator(self):
-        pass
+        nat = data["nationality"]
+        data["card_number"] = f"{nat[0:3].upper()}-{uniq}-{name[0:3].upper()}"
+        super().__init__(**data)
 
 
 class Immigrant(ImmigrantBase):
