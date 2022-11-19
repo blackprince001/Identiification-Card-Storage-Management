@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
 
-from database.models.immigrant import Immigrant as ImmigrantModel
+from database.models import Immigrant as ImmigrantModel
 from schemas.immigrant import ImmigrantCreate
 
 

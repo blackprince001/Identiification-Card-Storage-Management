@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
 
-from database.models.citizen import Citizen as CitizenModel
+from database.models import Citizen as CitizenModel
 from schemas.citizen import CitizenCreate
 
 
