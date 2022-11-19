@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
 
-from database.models import Citizen as CitizenModel
-from schemas.immigrant import CitizenCreate
+from database.models.citizen import Citizen as CitizenModel
+from schemas.citizen import CitizenCreate
 
 
 def create_citizen(db: Session, new_citizen: CitizenCreate) -> CitizenModel:
