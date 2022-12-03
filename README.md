@@ -41,3 +41,33 @@ To run the tests in the project:
   ```
   
 - Run pytest make commands highlighted above
+
+## Project Structure
+
+```console
+.
+├── api
+│   ├── citizen.py
+│   ├── immigrant.py
+│   └── __init__.py
+├── database
+│   ├── core.py
+│   ├── __init__.py
+│   └── models.py
+├── Pipfile
+├── Pipfile.lock
+├── README.md
+├── schemas
+│   ├── citizen.py
+│   ├── immigrant.py
+│   └── __init__.py
+└── tests
+    ├── api
+    │   ├── __init__.py
+    │   ├── test_citizen_api.py
+    │   └── test_immigrant_api.py
+    ├── conftest.py
+    └── __init__.py
+
+5 directories, 17 files
+```
